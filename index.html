@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <style>
+   
+
+    .gradient-background {
+  background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+  
+  background-size: 180% 180%;
+  animation: gradient-animation 8s ease infinite;
+  position: relative;
+  min-height: 200px;
+  color: white;
+  padding: 0;
+}
+
+
+
+
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.gradient-background {
+  padding-left: 0;
+  padding-right: 0;
+}
+.lead{
+    color: white;
+}
+h1{
+   
+    color:rgb(245, 255, 255);
+}
+.AboutMe-and-photo{
+
+    display: flex;
+  float: inline-end;
+  border-radius: 30px;
+  padding-right: 20px;
+  padding-top: 50px;
+  padding-left: 20px;
+  padding-bottom: 30px;
+
+}
+h2{
+    text-align: center;
+    padding-bottom: 0;
+    padding-top: 30px;
+}
+.AboutMe-text p {
+    display: flexbox;
+    
+  text-align: justify;
+  font-family: Arial, sans-serif; 
+  text-align: center;
+ padding-right: 35px;
+
+}
+
+
+
+.AboutMe-text{
+  padding-left: 20px;
+   padding-top: 50px;
+   
+}
+.projects{
+    padding-top: 40px;
+    display: flex;
+   gap: 20px;
+   flex-wrap: wrap;
+   
+   padding-left: 30px;
+
+}
+.Project-Heading{
+  padding-top: 30px;
+  text-align: center;
+
+}
+
+.tracking-in-expand {
+	-webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+
+@-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.tracking-in-expand {
+  animation: tracking-in-expand 1.9s ease-out both;
+}
+
+
+@-webkit-keyframes color-change-5x {
+  0% {
+    background: #19dcea;
+  }
+  25% {
+    background: #2cf8ff;
+  }
+  50% {
+    background: #22cfea;
+  }
+  75% {
+    background: #f5be10;
+  }
+  100% {
+    background: #3bd80d;
+  }
+}
+@keyframes color-change-5x {
+  0% {
+    background: #19dcea;
+  }
+  25% {
+    background: #b22cff;
+  }
+  50% {
+    background: #22ea89;
+  }
+  75% {
+    background: #9df510;
+  }
+  100% {
+    background: #3bd80d;
+  }
+}
+
+
+
+
+  </style>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand " href="#"><b>My Portfolio</b></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="#">About</a>
+            <a class="nav-link active" aria-current="page" href="#">Projects</a>
+            <a class="nav-link active" aria-current="page" href="#">Contact</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="gradient-background ">
+      <div class="container">
+        <div class="row">
+          <div class="col my-5 text-start">
+            <h1 class=" "><b> "M.Mujtaba Sajid"</b></h1>
+
+            <p class="lead ">
+              <b>Software Engineering Student | Web Developer</b>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="About" style="display: flex">
+      <div class="container2">
+        <div class="AboutMe-and-photo ">
+          <img
+            src="https://raw.githubusercontent.com/muhammadmujtabasajid/Photos/main/WhatsApp%20Image%202025-08-31%20at%2023.44.31_e96df198.jpg"
+            class="rounded mx-auto d-block "
+            alt="Mujtabas"
+            height="300px"
+          />
+        </div>
+        <div class="AboutMe-text tracking-in-expand ">
+          <h2 ><b>About Me</b></h2>
+          <p>
+            I’m Mujtaba, currently pursuing a degree in Software Engineering at
+            UMT and learning web development. I am passionate about technology
+            and committed to growing as a software engineer by improving my
+            skills and contributing to meaningful projects.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="Project-Heading">
+<div class="Project-H">
+    <h1 style="color: black; font-family:sans-serif;"><b>Projects</b></h1>
+
+</div>
+
+
+
+    </section>
+
+    <section class="projects container pb-5">
+  <div class="row g-4"> 
+
+    <div class="col-12 col-md-6 col-lg-6 shadow p-3 mb-5 bg-body-tertiary rounded">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">TOOL HUB</h5>
+          <p class="card-text">
+This project is developed in C++ using Object-Oriented Programming (OOP) concepts. It simulates a hardware store where users can browse and purchase tools such as drill machines, hammers, and screwdrivers. The system includes features like inventory management, product categorization, billing, and customer interaction. The project demonstrates the use of classes, objects, inheritance, polymorphism, and file handling to manage real-world shop operations in a structured way.          </p>
+          <a href="#" class="btn btn-primary">View Code</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-6 shadow p-3 mb-5 bg-body-tertiary rounded">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">TinDog-Landing Page</h5>
+          <p class="card-text">
+           A responsive landing page for a fictional dog dating app, built with HTML, CSS, and Bootstrap. This project was created while practicing web development fundamentals and mobile-first design.
+          </p>
+          <a href="#" class="btn btn-primary">View Code</a>
+        </div>
+      </div>
+    </div>
+
+    
+</section>
+
+<section id="contact" class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+      <h2 class="mb-4"><b>Contact</b></h2>
+
+      <form action="#" method="post" novalidate>
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input id="name" name="name" type="text" class="form-control" placeholder="Your full name" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input id="email" name="email" type="email" class="form-control" placeholder="you@example.com" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea id="message" name="message" rows="5" class="form-control" placeholder="Write your message..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary shadow-lg">Send</button>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+
+<footer class="bg-dark text-light py-4 mt-5">
+  <div class="container text-center small">
+    © 2025 Mujtaba | Built with Bootstrap
+  </div>
+</footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
