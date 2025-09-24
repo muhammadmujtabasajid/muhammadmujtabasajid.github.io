@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>My Website Of Portfolio</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -11,292 +12,307 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      h1 {
+        font-size: 500px;
+       
+        
+      }
+      h2, h3 ,h5{
+  font-family: 'Montserrat', sans-serif; 
+  font-weight: 700;
+}
+p, li {
+  font-family: 'Poppins', sans-serif; 
+  font-weight: 400;
+}
+      @-webkit-keyframes tracking-in-expand {
+        0% {
+          letter-spacing: -0.5em;
+          opacity: 0;
+        }
+        40% {
+          opacity: 0.6;
+        }
+        100% {
+          letter-spacing: normal;
+          opacity: 1;
+        }
+      }
+
+      @keyframes tracking-in-expand {
+        0% {
+          letter-spacing: -0.5em;
+          opacity: 0;
+        }
+        40% {
+          opacity: 0.6;
+        }
+        100% {
+          letter-spacing: normal;
+          opacity: 1;
+        }
+      }
+
+      .tracking-in-expand {
+        -webkit-animation: tracking-in-expand 0.7s
+          cubic-bezier(0.215, 0.61, 0.355, 1) both;
+        animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1)
+          both;
+      }
+      .Photo {
+        padding-top: 90px;
+      }
+      img {
+        height: 190px;
+        border-radius: 500px;
+      }
+      .about-me {
+        padding-top: 20px;
+      }
+      .about-me h2 {
+        font-size: 35px;
+        text-align: center;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        padding-bottom: 10px;
+      }
+      .about p {
+        text-align: center;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      .about-box {
+        max-width: 700px;
+        padding: 20px 30px; 
+        margin: 40px auto; 
+        background-color: #33a1e0; 
+        border-radius: 10px; 
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); 
+        
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      .my-skills {
+        font-size: 40px;
+        text-align: center;
+        font-family: sans-serif;
+        padding-bottom: 25px;
+      }
+      .my-skills img {
+        display: flex;
+        align-items: flex-start;
+        width: 300px;
+        padding-bottom: 20px;
+      }
+      .section3 {
+        max-width: 700px; 
+        padding: 20px 30px; 
+        margin: 40px auto; 
+        background-color: #33a1e0; 
+        border-radius: 10px; 
+        text-align: center; 
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); 
+
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      .button {
+        text-align: center;
+        border-radius: 20px;
+      }
+     
+      button{
+    
+          background-color: #1c6ea4; 
+        color: #fff9af; 
+        padding: 12px 25px; 
+        border: none; 
+        border-radius: 30px; 
+        font-size: 18px;
+        cursor: pointer; 
+        transition: 0.3s; 
+        
+      }
+      footer {
+        background-color: #154d71;
+      }
+      .button button:hover {
+        background-color: #1c6ea4; 
+        transform: scale(1.05); 
+      }
+      .buttons{
+        border-radius: 20px;
+        justify-items: ends;
+      }
+      
+      .project-link {
+  font-family: 'Poppins', sans-serif; 
+  font-size: 18px;
+  color: #fff9af; 
+  text-decoration: none; 
+  transition: 0.3s;
+}
+
+   
+    </style>
   </head>
-  <style>
-   
-
-    .gradient-background {
-  background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
-  
-  background-size: 180% 180%;
-  animation: gradient-animation 8s ease infinite;
-  position: relative;
-  min-height: 200px;
-  color: white;
-  padding: 0;
-}
-
-
-
-
-
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-
-.gradient-background {
-  padding-left: 0;
-  padding-right: 0;
-}
-.lead{
-    color: white;
-}
-h1{
-   
-    color:rgb(245, 255, 255);
-}
-.AboutMe-and-photo{
-
-    display: flex;
-  float: inline-end;
-  border-radius: 30px;
-  padding-right: 20px;
-  padding-top: 50px;
-  padding-left: 20px;
-  padding-bottom: 30px;
-
-}
-h2{
-    text-align: center;
-    padding-bottom: 0;
-    padding-top: 30px;
-}
-.AboutMe-text p {
-    display: flexbox;
-    
-  text-align: justify;
-  font-family: Arial, sans-serif; 
-  text-align: center;
- padding-right: 35px;
-
-}
-
-
-
-.AboutMe-text{
-  padding-left: 20px;
-   padding-top: 50px;
-   
-}
-.projects{
-    padding-top: 40px;
-    display: flex;
-   gap: 20px;
-   flex-wrap: wrap;
-   
-   padding-left: 30px;
-
-}
-.Project-Heading{
-  padding-top: 30px;
-  text-align: center;
-
-}
-
-.tracking-in-expand {
-	-webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-	        animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-}
-
-
-@-webkit-keyframes tracking-in-expand {
-  0% {
-    letter-spacing: -0.5em;
-    opacity: 0;
-  }
-  40% {
-    opacity: 0.6;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-.tracking-in-expand {
-  animation: tracking-in-expand 1.9s ease-out both;
-}
-
-
-@-webkit-keyframes color-change-5x {
-  0% {
-    background: #19dcea;
-  }
-  25% {
-    background: #2cf8ff;
-  }
-  50% {
-    background: #22cfea;
-  }
-  75% {
-    background: #f5be10;
-  }
-  100% {
-    background: #3bd80d;
-  }
-}
-@keyframes color-change-5x {
-  0% {
-    background: #19dcea;
-  }
-  25% {
-    background: #b22cff;
-  }
-  50% {
-    background: #22ea89;
-  }
-  75% {
-    background: #9df510;
-  }
-  100% {
-    background: #3bd80d;
-  }
-}
-
-
-
-
-  </style>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <div class="container-fluid">
-        <a class="navbar-brand " href="#"><b>My Portfolio</b></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sacramento&display=swap"
+      rel="stylesheet"
+    />
+
+    <section
+      class="hero text-center"
+      style="
+        background-color: #154d71;
+        height: 450px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      "
+    >
+      <h1
+        class="tracking-in-expand"
+        style="font-size: 80px; color: #fff9af; margin: 0"
+      >
+        <span style="font-family: 'Bebas Neue', sans-serif">I am </span>
+        <span style="font-family: 'Sacramento', cursive">Mujtaba.</span>
+      </h1>
+      <p
+        style="
+          font-family: 'Montserrat', sans-serif;
+          font-size: 24px;
+          color: #cce8f9;
+          margin-top: 10px;
+        "
+      >
+        Learning Web Development & Software Engineering
+      </p>
+    </section>
+    <section>
+      <div class="Photo">
+        <img
+          src="https://raw.githubusercontent.com/muhammadmujtabasajid/Photos/main/WhatsApp%20Image%202025-08-31%20at%2023.44.31_e96df198.jpg"
+          class="mx-auto d-block"
+          alt="Mujtabas"
+          height="300px"
+        />
+      </div>
+
+      <div class="about-me">
+        <h2>Hello.</h2>
+      </div>
+
+      <div class="about-box">
+        <p>
+          Hi, I’m Mujtaba. I’m learning Full-Stack Web Development with MERN and
+          also studying Software Engineering with C++. I enjoy coding, building
+          small projects, and learning new things every day. Oh, and I love
+          plants too! 🌱
+        </p>
+      </div>
+    </section>
+    <section class="section3 py-5" id="skills">
+      <div class="container section3-box ">
+        <h2 class="text-center mb-4"><b>Skills</b></h2>
+        <div
+          class="d-flex flex-column flex-md-row align-items-center justify-content-center gap-4"
         >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-            <a class="nav-link active" aria-current="page" href="#">About</a>
-            <a class="nav-link active" aria-current="page" href="#">Projects</a>
-            <a class="nav-link active" aria-current="page" href="#">Contact</a>
+          <!-- GIF Column -->
+          <div class=" skills text-center">
+            <img
+              src="https://raw.githubusercontent.com/muhammadmujtabasajid/Photos/main/gif.gif"
+              alt="My GIF"
+              class="img-fluid"
+              style="max-width: 300px"
+            />
+          </div>
+
+          <!-- Skills Text Column -->
+          <div>
+           <ul style="text-align: left;
+           font-size: 20px;
+           line-height: 1.6;
+           ">
+  <li>HTML, CSS, JavaScript</li>
+  <li>C++ Software Development</li>
+  <li>Problem Solving & Learning Daily</li>
+</ul>
           </div>
         </div>
       </div>
-    </nav>
-    <section class="gradient-background ">
-      <div class="container">
-        <div class="row">
-          <div class="col my-5 text-start">
-            <h1 class=" "><b> "M.Mujtaba Sajid"</b></h1>
+    </section>
 
-            <p class="lead ">
-              <b>Software Engineering Student | Web Developer</b>
-            </p>
+<section class="section3 py-5" id="projects">
+  <div class="container section3-box">
+    <h2 class="text-center mb-4"><b>My Projects</b></h2>
+    <div class="row justify-content-center g-4">
+      
+      <!-- Project Card 1 -->
+      <div class="col-md-6 col-lg-6">
+        <div class="card text-center h-100" style="border-radius: 30px;">
+          <img src="https://cdn.dribbble.com/userupload/28117148/file/original-c0db2041822a946b9529b5ae1fdf08e8.gif"
+               class="card-img-top" alt="Project 1" style="border-top-left-radius:110px; border-top-right-radius:100px; height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title">My Portfolio</h5>
+            <p class="card-text">A personal portfolio website showcasing my skills using HTML , CSS & Bootstrap .</p>
+            <a href="https://github.com/muhammadmujtabasajid/My-Portfolio-Project/tree/main" class="buttons btn btn-warning" target="_blank">View Project</a>
           </div>
         </div>
       </div>
-    </section>
-    <section class="About" style="display: flex">
-      <div class="container2">
-        <div class="AboutMe-and-photo ">
-          <img
-            src="https://raw.githubusercontent.com/muhammadmujtabasajid/Photos/main/WhatsApp%20Image%202025-08-31%20at%2023.44.31_e96df198.jpg"
-            class="rounded mx-auto d-block "
-            alt="Mujtabas"
-            height="300px"
-          />
-        </div>
-        <div class="AboutMe-text tracking-in-expand ">
-          <h2 ><b>About Me</b></h2>
-          <p>
-            I’m Mujtaba, currently pursuing a degree in Software Engineering at
-            UMT and learning web development. I am passionate about technology
-            and committed to growing as a software engineer by improving my
-            skills and contributing to meaningful projects.
-          </p>
+
+      <!-- Project Card 2 -->
+      <div class="col-md-6 col-lg-6">
+        <div class="card text-center h-100" style="border-radius: 30px;">
+          <img src="https://cdn.dribbble.com/userupload/21976650/file/original-0b3faffacfd2c7b9c5c47665ae174fab.gif"
+               class="card-img-top" alt="Project 2" style="border-top-left-radius:100px; border-top-right-radius:110px; height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title">ToolShop Manager</h5>
+            <p class="card-text">A simple C++ project demonstrating OOP concepts. The program simulates a hardware store where a shopkeeper manages tools and machines, including hammers, drills, and more.</p>
+            <a href="#" class="buttons btn btn-warning">View Project</a>
+          </div>
         </div>
       </div>
-    </section>
 
-    <section class="Project-Heading">
-<div class="Project-H">
-    <h1 style="color: black; font-family:sans-serif;"><b>Projects</b></h1>
-
-</div>
-
-
-
-    </section>
-
-    <section class="projects container pb-5">
-  <div class="row g-4"> 
-
-    <div class="col-12 col-md-6 col-lg-6 shadow p-3 mb-5 bg-body-tertiary rounded">
-      <div class="card h-100">
-        <div class="card-body">
-          <h5 class="card-title">TOOL HUB</h5>
-          <p class="card-text">
-This project is developed in C++ using Object-Oriented Programming (OOP) concepts. It simulates a hardware store where users can browse and purchase tools such as drill machines, hammers, and screwdrivers. The system includes features like inventory management, product categorization, billing, and customer interaction. The project demonstrates the use of classes, objects, inheritance, polymorphism, and file handling to manage real-world shop operations in a structured way.          </p>
-          <a href="#" class="btn btn-primary">View Code</a>
+      <!-- Project Card 3 -->
+      <div class="col-md-6 col-lg-6">
+        <div class="card text-center h-100" style="border-radius: 30px;">
+          <img src="https://cdn.dribbble.com/userupload/21820852/file/original-c9846971f56609556ce28c7e0d9aa841.gif"
+               class="card-img-top" alt="Project 3" style="border-top-left-radius:100px; border-top-right-radius:110px; height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title">Calculator</h5>
+            <p class="card-text">A basic web calculator built with HTML, CSS, and JavaScript to perform simple arithmetic operations.
+</p>
+            <a href="#" class="buttons btn btn-warning">View Project</a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="col-12 col-md-6 col-lg-6 shadow p-3 mb-5 bg-body-tertiary rounded">
-      <div class="card h-100">
-        <div class="card-body">
-          <h5 class="card-title">TinDog-Landing Page</h5>
-          <p class="card-text">
-           A responsive landing page for a fictional dog dating app, built with HTML, CSS, and Bootstrap. This project was created while practicing web development fundamentals and mobile-first design.
-          </p>
-          <a href="#" class="btn btn-primary">View Code</a>
-        </div>
-      </div>
-    </div>
 
-    
-</section>
-
-<section id="contact" class="container py-5">
-  <div class="row justify-content-center">
-    <div class="col-12 col-md-10 col-lg-8">
-      <h2 class="mb-4"><b>Contact</b></h2>
-
-      <form action="#" method="post" novalidate>
-        <div class="mb-3">
-          <label for="name" class="form-label">Name</label>
-          <input id="name" name="name" type="text" class="form-control" placeholder="Your full name" required>
-        </div>
-
-        <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input id="email" name="email" type="email" class="form-control" placeholder="you@example.com" required>
-        </div>
-
-        <div class="mb-3">
-          <label for="message" class="form-label">Message</label>
-          <textarea id="message" name="message" rows="5" class="form-control" placeholder="Write your message..." required></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-primary shadow-lg">Send</button>
-      </form>
+      
 
     </div>
   </div>
 </section>
-
-
-<footer class="bg-dark text-light py-4 mt-5">
-  <div class="container text-center small">
-    © 2025 Mujtaba | Built with Bootstrap
-  </div>
-</footer>
+<section class="button">
+      <button>Contact Me</button>
+    </section>
+    <footer class="text-light py-4 mt-5">
+      <div class="container text-center">
+        <p class="mb-1">© 2025 Mujtaba. All rights reserved.</p>
+        <a href="#" class="text-light me-3">Home</a>
+        <a href="#about" class="text-light me-3">About</a>
+        <a href="#contact" class="text-light">Contact</a>
+      </div>
+    </footer>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
