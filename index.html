@@ -122,23 +122,31 @@ p, li {
         font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
           "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
       }
-      .button {
-        text-align: center;
-        border-radius: 20px;
-      }
+  
      
-      button{
-    
-          background-color: #1c6ea4; 
-        color: #fff9af; 
-        padding: 12px 25px; 
-        border: none; 
-        border-radius: 30px; 
-        font-size: 18px;
-        cursor: pointer; 
-        transition: 0.3s; 
-        
-      }
+ .button {
+    text-align: center; 
+    margin: 20px 0;     
+}
+
+.button a {
+    background-color: #1c6ea4; 
+    color: #fff9af; 
+    padding: 12px 25px; 
+    border-radius: 30px; 
+    font-size: 18px;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.button a:hover {
+    background-color: #154d71; 
+    color: #fff9af; 
+    transform: scale(1.05);
+}
+
       footer {
         background-color: #154d71;
       }
@@ -277,7 +285,7 @@ p, li {
           <div class="card-body">
             <h5 class="card-title">ToolShop Manager</h5>
             <p class="card-text">A simple C++ project demonstrating OOP concepts. The program simulates a hardware store where a shopkeeper manages tools and machines, including hammers, drills, and more.</p>
-<a href="https://github.com/muhammadmujtabasajid/Tool-Shop-Manager" class="buttons btn btn-warning" target="_blank">View Project</a>
+            <a href="https://github.com/muhammadmujtabasajid/Tool-Shop-Manager" class="buttons btn btn-warning">View Project</a>
           </div>
         </div>
       </div>
@@ -303,8 +311,12 @@ p, li {
   </div>
 </section>
 <section class="button">
-      <button>Contact Me</button>
-    </section>
+  <a href="mailto:mujtabasajid00@gmail.com" class="btn" >Contact Me</a>
+
+</section>
+
+
+
     <footer class="text-light py-4 mt-5">
       <div class="container text-center">
         <p class="mb-1">© 2025 Mujtaba. All rights reserved.</p>
