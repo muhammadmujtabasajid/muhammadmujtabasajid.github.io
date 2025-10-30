@@ -36,9 +36,9 @@
       
       /* --- Dark Mode Variables --- */
       html[data-theme="dark"] {
-        --body-bg: #1a202c;         
-        --card-bg: #2d3748;         
-        --text-dark: #f0f2f5;         
+        --body-bg: #1a202c;        
+        --card-bg: #2d3748;        
+        --text-dark: #f0f2f5;        
         --text-light: #2d3748;        
         --section-bg-alt: #1a202c; 
       }
@@ -162,6 +162,8 @@
       @media (max-width: 480px) {
         .hero h1 { font-size: 50px; }
         .hero p { font-size: 18px; }
+        /* --- CHANGED --- */
+        .about-img { max-width: 250px; }
       }
 
       /* -- About Section -- */
@@ -326,7 +328,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto align-items-center">
+          <ul class="navbar-nav ms-auto align-items-center text-end text-lg-start">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#home">Home</a>
             </li>
@@ -370,7 +372,7 @@
               alt="Mujtaba"
             />
           </div>
-          <div class="col-lg-7 about-text" data-aos="fade-left" data-aos-delay="100">
+          <div class="col-lg-7 about-text text-center text-lg-start" data-aos="fade-left" data-aos-delay="100">
             <h2>Hello.</h2>
             <p>
               Hi, I’m Mujtaba. I’m learning Full Stack Web Development with MERN
@@ -491,10 +493,7 @@
         <a href="mailto:mujtabasajid00@gmail.com" class="btn-custom btn-lg"
           >Contact Me</a
         >
-        <a href="YOUR_RESUME_LINK_HERE.pdf" class="btn-custom btn-lg" target="_blank"
-          >View My Resume</a
-        >
-      </div>
+        </div>
     </section>
 
     <footer class="text-light py-4">
