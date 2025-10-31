@@ -213,47 +213,29 @@
 
 
       /* -- Skills Section -- */
-      .skills-list {
+.skills-list {
         text-align: left;
         font-size: 1.15rem;
         line-height: 2;
-        list-style-type: "✅ ";
-        padding-left: 1.5rem;
+        list-style: none; /* === UPDATED: Removed emoji === */
+        padding-left: 1.5rem; /* This padding creates space for the bullet */
       }
       .skills-list li {
-        padding-left: 0.5rem;
+        padding-left: 0.5rem; /* This is the space between the bullet and text */
+      }
+      
+      /* === ADDED: Custom bullet style === */
+      .skills-list li::before {
+        content: '•';
+        color: var(--dark-blue);
+        font-weight: 700;
+        display: inline-block;
+        width: 1.5rem; /* Matches the ul padding-left */
+        margin-left: -1.5rem; /* Pulls the bullet into the padding */
       }
 
-      /* -- Projects Section -- */
-      .card {
-        border: none;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        height: 100%;
-        background-color: var(--card-bg);
-      }
-      html[data-theme="dark"] .card {
-         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      }
-      .card:hover {
-        transform: translateY(-5px);
-      }
-      .card-img-top {
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-        height: 220px;
-        object-fit: cover;
-      }
-      .card-body {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-      .card-title {
-        color: var(--dark-blue);
-      }
-      html[data-theme="dark"] .card-title {
+      /* === ADDED: Dark mode bullet color === */
+      html[data-theme="dark"] .skills-list li::before {
         color: var(--accent-yellow);
       }
 
