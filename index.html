@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mujtaba's Portfolio</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sacramento&display=swap" rel="stylesheet"/>
     
     <link
@@ -30,14 +30,17 @@
         --text-dark: #212529; 
         --text-light: #f8f9fa;
         --section-bg-alt: #e9ecef;
+        
+        /* === UPDATED: Font Families === */
         --font-heading: 'Montserrat', sans-serif;
-        --font-body: 'Poppins', sans-serif;
+        --font-body: 'Inter', sans-serif;
+        --font-code: 'Fira Code', 'Consolas', monospace; /* Added per suggestion */
       }
       
       /* --- Dark Mode Variables --- */
       html[data-theme="dark"] {
-        --body-bg: #1a202c;        
-        --card-bg: #2d3748;        
+        --body-bg: #1a202c;          
+        --card-bg: #2d3748;          
         --text-dark: #f0f2f5;        
         --text-light: #2d3748;        
         --section-bg-alt: #1a202c; 
@@ -55,13 +58,29 @@
         background-color: var(--body-bg);
         color: var(--text-dark);
         font-family: var(--font-body);
-        line-height: 1.7;
+        font-size: 1rem; /* Explicitly set base size */
+        font-weight: 400; /* Explicitly set body weight */
+        line-height: 1.6; /* === UPDATED: Line height from 1.7 === */
       }
 
       h1, h2, h3, h4, h5, h6 {
         font-family: var(--font-heading);
         font-weight: 700;
         color: var(--text-dark);
+        line-height: 1.3; /* === ADDED: Tighter line-height for headings === */
+      }
+      
+      /* === ADDED: Monospace font styling per suggestion === */
+      code, pre {
+        font-family: var(--font-code);
+        background-color: var(--section-bg-alt);
+        padding: 0.2em 0.4em;
+        border-radius: 6px;
+        font-size: 0.9em;
+      }
+      html[data-theme="dark"] code, 
+      html[data-theme="dark"] pre {
+          background-color: var(--body-bg);
       }
       
       .content-section {
@@ -102,7 +121,7 @@
       .nav-link {
         color: var(--text-light) !important;
         font-family: var(--font-heading);
-        font-weight: 600;
+        font-weight: 600; /* Use 600 weight from Montserrat */
         margin: 0 0.5rem;
       }
       .nav-link:hover, .nav-link.active {
@@ -148,7 +167,7 @@
         text-align: center;
       }
       .hero h1 {
-        font-size: 80px;
+        font-size: 80px; /* This is a stylistic override, which is fine */
         color: var(--accent-yellow);
         margin: 0;
       }
@@ -162,7 +181,6 @@
       @media (max-width: 480px) {
         .hero h1 { font-size: 50px; }
         .hero p { font-size: 18px; }
-        /* --- CHANGED --- */
         .about-img { max-width: 250px; }
       }
 
@@ -175,7 +193,8 @@
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
       }
       .about-text h2 {
-        font-size: 2.5rem;
+        /* === UPDATED: Standardized to 2rem to match other sections === */
+        font-size: 2rem; 
         margin-bottom: 1rem;
         color: var(--dark-blue);
       }
@@ -248,9 +267,8 @@
         text-decoration: none;
         display: inline-block;
         transition: all 0.3s ease;
-        font-weight: 600;
+        font-weight: 600; /* Uses 600 weight from Montserrat */
         border: 2px solid var(--dark-blue);
-        /* NEW: Added margin for spacing between buttons */
         margin: 5px; 
       }
       .btn-custom:hover {
@@ -287,7 +305,7 @@
       html[data-theme="dark"] footer p {
         color: var(--text-dark);
       }
-      html[data-theme="dark"] footer a {
+      html[data-theme="dark"] html[data-theme="dark"] footer a {
         color: var(--text-dark);
       }
       html[data-theme="dark"] footer a:hover {
@@ -490,7 +508,7 @@
           I'm always open to new opportunities and collaborations. Feel free to
           reach out!
         </p>
-        <a href="mailto:mujtaba.creates@gmail.com" class="btn-custom btn-lg"
+        <a href="mailto:mujtabasajid00@gmail.com" class="btn-custom btn-lg"
           >Contact Me</a
         >
         </div>
