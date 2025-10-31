@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mujtaba's Portfolio</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sacramento&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Montserrat:wght@600;700&family=Sacramento&display=swap" rel="stylesheet">
     
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -31,10 +30,9 @@
         --text-light: #f8f9fa;
         --section-bg-alt: #e9ecef;
         
-        /* === UPDATED: Font Families === */
-        --font-heading: 'Montserrat', sans-serif;
-        --font-body: 'Inter', sans-serif;
-        --font-code: 'Fira Code', 'Consolas', monospace; /* Added per suggestion */
+        --font-heading: 'Montserrat', system-ui, sans-serif;
+        --font-body: 'Inter', system-ui, sans-serif;
+        --font-code: 'Fira Code', 'Consolas', monospace;
       }
       
       /* --- Dark Mode Variables --- */
@@ -58,19 +56,18 @@
         background-color: var(--body-bg);
         color: var(--text-dark);
         font-family: var(--font-body);
-        font-size: 1rem; /* Explicitly set base size */
-        font-weight: 400; /* Explicitly set body weight */
-        line-height: 1.6; /* === UPDATED: Line height from 1.7 === */
+        font-size: 1.05rem;
+        font-weight: 400; 
+        line-height: 1.6;
       }
 
       h1, h2, h3, h4, h5, h6 {
         font-family: var(--font-heading);
         font-weight: 700;
         color: var(--text-dark);
-        line-height: 1.3; /* === ADDED: Tighter line-height for headings === */
+        line-height: 1.3;
       }
       
-      /* === ADDED: Monospace font styling per suggestion === */
       code, pre {
         font-family: var(--font-code);
         background-color: var(--section-bg-alt);
@@ -121,7 +118,7 @@
       .nav-link {
         color: var(--text-light) !important;
         font-family: var(--font-heading);
-        font-weight: 600; /* Use 600 weight from Montserrat */
+        font-weight: 600;
         margin: 0 0.5rem;
       }
       .nav-link:hover, .nav-link.active {
@@ -167,7 +164,7 @@
         text-align: center;
       }
       .hero h1 {
-        font-size: 80px; /* This is a stylistic override, which is fine */
+        font-size: 80px;
         color: var(--accent-yellow);
         margin: 0;
       }
@@ -176,11 +173,27 @@
         font-size: 24px;
         color: var(--light-blue);
         margin-top: 10px;
+        min-height: 2.5rem; 
       }
+      
+      #typed-text::after {
+        content: '|';
+        color: var(--light-blue);
+        margin-left: 0.25rem;
+        animation: blink 1s infinite;
+      }
+      #typed-text.typing::after {
+        animation: none;
+      }
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+      
       
       @media (max-width: 480px) {
         .hero h1 { font-size: 50px; }
-        .hero p { font-size: 18px; }
+        .hero p { font-size: 18px; min-height: 2rem; }
         .about-img { max-width: 250px; }
       }
 
@@ -193,13 +206,12 @@
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
       }
       .about-text h2 {
-        /* === UPDATED: Standardized to 2rem to match other sections === */
         font-size: 2rem; 
         margin-bottom: 1rem;
         color: var(--dark-blue);
       }
       .about-text p {
-        font-size: 1.1rem;
+        font-size: 1.1rem; /* This won't apply to .card-text, just other p tags */
       }
       
       html[data-theme="dark"] .about-text h2,
@@ -213,31 +225,69 @@
 
 
       /* -- Skills Section -- */
-.skills-list {
+      .skills-list {
         text-align: left;
         font-size: 1.15rem;
         line-height: 2;
-        list-style: none; /* === UPDATED: Removed emoji === */
-        padding-left: 1.5rem; /* This padding creates space for the bullet */
+        list-style: none;
+        padding-left: 1.5rem;
       }
       .skills-list li {
-        padding-left: 0.5rem; /* This is the space between the bullet and text */
+        padding-left: 0.5rem;
       }
       
-      /* === ADDED: Custom bullet style === */
       .skills-list li::before {
         content: '•';
         color: var(--dark-blue);
         font-weight: 700;
         display: inline-block;
-        width: 1.5rem; /* Matches the ul padding-left */
-        margin-left: -1.5rem; /* Pulls the bullet into the padding */
+        width: 1.5rem;
+        margin-left: -1.5rem;
       }
-
-      /* === ADDED: Dark mode bullet color === */
       html[data-theme="dark"] .skills-list li::before {
         color: var(--accent-yellow);
       }
+
+
+      /* -- Projects Section -- */
+      .card {
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+        background-color: var(--card-bg);
+      }
+      html[data-theme="dark"] .card {
+         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+      .card:hover {
+        transform: translateY(-5px);
+      }
+      .card-img-top {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        height: 220px;
+        object-fit: cover;
+      }
+      .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .card-title {
+        color: var(--dark-blue);
+      }
+      html[data-theme="dark"] .card-title {
+        color: var(--accent-yellow);
+      }
+      
+      /* === UPDATED: Added this rule to control card text size === */
+      .card-text {
+        font-size: 1rem;
+        line-height: 1.5; 
+      }
+
 
       /* -- Custom Button -- */
       .btn-custom {
@@ -249,7 +299,7 @@
         text-decoration: none;
         display: inline-block;
         transition: all 0.3s ease;
-        font-weight: 600; /* Uses 600 weight from Montserrat */
+        font-weight: 600;
         border: 2px solid var(--dark-blue);
         margin: 5px; 
       }
@@ -356,10 +406,10 @@
 
     <section id="home" class="hero">
       <h1 class="tracking-in-expand">
-        <span style="font-family: 'Bebas Neue', sans-serif">I am </span>
-        <span style="font-family: 'Sacramento', cursive">Mujtaba.</span>
+        <span style="font-family: var(--font-heading); font-weight: 700;">I am </span>
+        <span style="font-family: 'Sacramento', cursive; font-weight: 400;">Mujtaba.</span>
       </h1>
-      <p>Learning Web Development & Software Engineering</p>
+      <p><span id="typed-text"></span></p>
     </section>
 
     <section id="about" class="content-section">
@@ -514,6 +564,7 @@
     
     <script>
       (function() {
+        // --- Theme Toggle ---
         const themeToggle = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
         const docHtml = document.documentElement;
@@ -544,6 +595,57 @@
           localStorage.setItem('theme', newTheme);
           updateIcon(newTheme);
         });
+      })();
+    </script>
+
+    <script>
+      (function() {
+        const typedTextSpan = document.getElementById('typed-text');
+        
+        if (typedTextSpan) {
+          const textArray = [
+            "Learning Web Development", 
+            "Learning Software Engineering",
+            "love to grind on what seems difficult", 
+            "a Plant Enthusiast 🌱"
+          ];
+          const typingDelay = 100;
+          const erasingDelay = 50;
+          const newTextDelay = 2200; // Delay before starting to erase
+          let textArrayIndex = 0;
+          let charIndex = 0;
+
+          function type() {
+            typedTextSpan.classList.add('typing'); // Pause cursor blink
+            if (charIndex < textArray[textArrayIndex].length) {
+              typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+              charIndex++;
+              setTimeout(type, typingDelay);
+            } else {
+              typedTextSpan.classList.remove('typing'); // Resume blink
+              setTimeout(erase, newTextDelay);
+            }
+          }
+
+          function erase() {
+            typedTextSpan.classList.add('typing'); // Pause cursor blink
+            if (charIndex > 0) {
+              typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+              charIndex--;
+              setTimeout(erase, erasingDelay);
+            } else {
+              typedTextSpan.classList.remove('typing'); // Resume blink
+              textArrayIndex++;
+              if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+              setTimeout(type, typingDelay + 1100); // Wait before typing new string
+            }
+          }
+
+          // Start the effect on load
+          document.addEventListener("DOMContentLoaded", function() { 
+            if(textArray.length) setTimeout(type, newTextDelay - 1000); // Initial delay
+          });
+        }
       })();
     </script>
     
