@@ -19,7 +19,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
-      /* --- 1. Root Variables (Light Mode - Default) --- */
+      /* --- 1. Root Variables --- */
       :root {
         --dark-blue: #154d71;
         --light-blue: #cce8f9;
@@ -35,10 +35,9 @@
         --font-code: 'Fira Code', 'Consolas', monospace;
       }
       
-      /* --- Dark Mode Variables --- */
       html[data-theme="dark"] {
-        --body-bg: #1a202c;           
-        --card-bg: #2d3748;           
+        --body-bg: #1a202c;            
+        --card-bg: #2d3748;            
         --text-dark: #f0f2f5;        
         --text-light: #2d3748;        
         --section-bg-alt: #1a202c; 
@@ -59,7 +58,7 @@
         font-size: 1.05rem;
         font-weight: 400; 
         line-height: 1.6;
-        overflow-x: hidden; /* Prevent horizontal scroll from animations */
+        overflow-x: hidden;
       }
 
       h1, h2, h3, h4, h5, h6 {
@@ -69,46 +68,18 @@
         line-height: 1.3;
       }
       
-      code, pre {
-        font-family: var(--font-code);
-        background-color: var(--section-bg-alt);
-        padding: 0.2em 0.4em;
-        border-radius: 6px;
-        font-size: 0.9em;
-      }
-      html[data-theme="dark"] code, 
-      html[data-theme="dark"] pre {
-          background-color: var(--body-bg);
-      }
-      
       .content-section {
         padding: 6rem 0;
         background-color: var(--body-bg);
         position: relative;
-        z-index: 2; /* Ensure content is above background elements if any */
+        z-index: 2;
       }
       
       #skills {
         background-color: var(--section-bg-alt);
       }
 
-      .card-box {
-        background-color: var(--card-bg);
-        border-radius: 15px;
-        padding: 2.5rem;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-      html[data-theme="dark"] .card-box {
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      }
-      .card-box:hover {
-        transform: translateY(-5px);
-      }
-
       /* --- 3. Component Styles --- */
-      
-      /* -- Navigation Bar -- */
       .navbar {
         background-color: var(--dark-blue);
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -141,77 +112,43 @@
         padding-bottom: 0.5rem;
         cursor: pointer;
       }
-      #theme-toggle .bi-sun-fill {
-        color: #f39c12; 
-      }
+      #theme-toggle .bi-sun-fill { color: #f39c12; }
       
-      html[data-theme="dark"] .navbar {
-        background-color: var(--card-bg);
-      }
-      html[data-theme="dark"] .nav-link {
-        color: var(--text-dark) !important;
-      }
+      html[data-theme="dark"] .navbar { background-color: var(--card-bg); }
+      html[data-theme="dark"] .nav-link { color: var(--text-dark) !important; }
       html[data-theme="dark"] .nav-link:hover,
-      html[data-theme="dark"] .nav-link.active {
-        color: var(--accent-yellow) !important;
-      }
+      html[data-theme="dark"] .nav-link.active { color: var(--accent-yellow) !important; }
 
-
-      /* -- HERO SECTION ANIMATIONS START -- */
+      /* -- HERO SECTION -- */
       .hero {
-        /* Animated Gradient Background */
         background: linear-gradient(-45deg, #154d71, #0f2c44, #1c6ea4, #154d71);
         background-size: 400% 400%;
         animation: gradientBG 15s ease infinite;
-        
         min-height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         text-align: center;
-        position: relative; /* Essential for particles */
-        overflow: hidden;   /* Keeps particles inside */
-      }
-
-      /* Content wrapper to keep text ABOVE the particles */
-      .hero-content-wrapper {
         position: relative;
-        z-index: 2;
+        overflow: hidden;
       }
-
-      /* Animated Background Keyframes */
+      .hero-content-wrapper { position: relative; z-index: 2; }
       @keyframes gradientBG {
         0% { background-position: 0% 50%; }
         50% { background-position: 100% 50%; }
         100% { background-position: 0% 50%; }
       }
 
-      /* Floating Particles/Squares */
+      /* Particles */
       .circles {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        margin: 0;
-        padding: 0;
-        z-index: 1; /* Behind text */
+        position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; margin: 0; padding: 0; z-index: 1;
       }
-
       .circles li {
-        position: absolute;
-        display: block;
-        list-style: none;
-        width: 20px;
-        height: 20px;
-        background: rgba(255, 255, 255, 0.1); /* Transparent White */
-        animation: animateParticles 25s linear infinite;
-        bottom: -150px;
+        position: absolute; display: block; list-style: none; width: 20px; height: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        animation: animateParticles 25s linear infinite; bottom: -150px;
       }
-
-      /* Particle Configurations (Sizes, Positions, Delays) */
       .circles li:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-delay: 0s; }
       .circles li:nth-child(2) { left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s; }
       .circles li:nth-child(3) { left: 70%; width: 20px; height: 20px; animation-delay: 4s; }
@@ -222,66 +159,25 @@
       .circles li:nth-child(8) { left: 50%; width: 25px; height: 25px; animation-delay: 15s; animation-duration: 45s; }
       .circles li:nth-child(9) { left: 20%; width: 15px; height: 15px; animation-delay: 2s; animation-duration: 35s; }
       .circles li:nth-child(10) { left: 85%; width: 150px; height: 150px; animation-delay: 0s; animation-duration: 11s; }
-
       @keyframes animateParticles {
-        0% {
-          transform: translateY(0) rotate(0deg);
-          opacity: 1;
-          border-radius: 0;
-        }
-        100% {
-          transform: translateY(-1000px) rotate(720deg);
-          opacity: 0;
-          border-radius: 50%;
-        }
+        0% { transform: translateY(0) rotate(0deg); opacity: 1; border-radius: 0; }
+        100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; border-radius: 50%; }
       }
-      /* -- HERO SECTION ANIMATIONS END -- */
 
-      .hero h1 {
-        font-size: 80px;
-        color: var(--accent-yellow);
-        margin: 0;
-      }
-      .hero p {
-        font-family: var(--font-heading);
-        font-size: 24px;
-        color: var(--light-blue);
-        margin-top: 10px;
-        min-height: 2.5rem; 
-      }
-      
-      /* -- Hero Social Buttons -- */
-      .hero-social-icons {
-        margin-top: 1.5rem;
-      }
+      .hero h1 { font-size: 80px; color: var(--accent-yellow); margin: 0; }
+      .hero p { font-family: var(--font-heading); font-size: 24px; color: var(--light-blue); margin-top: 10px; min-height: 2.5rem; }
+      .hero-social-icons { margin-top: 1.5rem; }
       .hero-social-icons a {
-        color: #ffffff; /* Default White */
-        font-size: 2rem;
-        margin: 0 15px;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        display: inline-block;
+        color: #ffffff; font-size: 2rem; margin: 0 15px; text-decoration: none; transition: all 0.3s ease; display: inline-block;
       }
       .hero-social-icons a:hover {
-        color: var(--accent-yellow); 
-        transform: scale(1.2) rotate(5deg);
-        filter: drop-shadow(0 0 5px rgba(255, 249, 175, 0.5));
+        color: var(--accent-yellow); transform: scale(1.2) rotate(5deg); filter: drop-shadow(0 0 5px rgba(255, 249, 175, 0.5));
       }
 
-      /* Typing Cursor Styles */
-      #typed-text::after {
-        content: '|';
-        color: var(--light-blue);
-        margin-left: 0.25rem;
-        animation: blink 1s infinite;
-      }
-      #typed-text.typing::after {
-        animation: none;
-      }
-      @keyframes blink {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0; }
-      }
+      /* Typing Cursor */
+      #typed-text::after { content: '|'; color: var(--light-blue); margin-left: 0.25rem; animation: blink 1s infinite; }
+      #typed-text.typing::after { animation: none; }
+      @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
       
       @media (max-width: 480px) {
         .hero h1 { font-size: 50px; }
@@ -289,90 +185,182 @@
         .about-img { max-width: 250px; }
       }
 
-      /* -- About Section -- */
+      /* --- ABOUT IMAGE: SUBTLE FLUID (Not too blobby) --- */
       .about-img {
         width: 100%;
         max-width: 300px;
         height: auto;
+        /* Start with a gentle round shape */
+        border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         
-        /* Initial Blob Shape */
-        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        
-        /* === UPDATED ANIMATION: Shape Morph ONLY (No Movement) === */
-        animation: shapeMorph 6s ease-in-out infinite;
-        transition: all 0.5s ease;
+        /* Two animations combined: Morph + Float */
+        animation: subtleMorph 7s ease-in-out infinite, floatImage 4s ease-in-out infinite;
+        transition: all 0.3s ease;
       }
       
       .about-img:hover {
         cursor: pointer;
-        filter: brightness(1.1);
+        filter: brightness(1.05);
       }
 
-      /* === SHAPE MORPHING KEYFRAMES (No Translate/Rotate) === */
-      @keyframes shapeMorph {
-        0% {
-          border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-        }
-        25% {
-          border-radius: 40% 60% 70% 30% / 50% 60% 30% 60%;
-        }
-        50% {
-          border-radius: 70% 30% 50% 50% / 30% 40% 60% 70%;
-        }
-        75% {
-          border-radius: 40% 60% 30% 70% / 60% 30% 70% 40%;
-        }
-        100% {
-          border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-        }
+      /* GENTLE FLUID MORPH: Radius changes are small (45%-55%) */
+      @keyframes subtleMorph {
+        0% { border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%; }
+        33% { border-radius: 45% 55% 50% 55% / 55% 45% 55% 45%; }
+        66% { border-radius: 55% 45% 55% 45% / 45% 55% 45% 55%; }
+        100% { border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%; }
+      }
+      /* FLOAT */
+      @keyframes floatImage {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
       }
 
-      .about-text h2 {
-        font-size: 2rem; 
-        margin-bottom: 1rem;
-        color: var(--dark-blue);
-      }
-      .about-text p {
-        font-size: 1.1rem;
-      }
+      .about-text h2 { font-size: 2rem; margin-bottom: 1rem; color: var(--dark-blue); }
+      .about-text p { font-size: 1.1rem; }
       
       html[data-theme="dark"] .about-text h2,
       html[data-theme="dark"] #projects h2,
-      html[data-theme="dark"] #contact h2 {
-        color: var(--text-dark);
-      }
-      html[data-theme="dark"] .card-box h2 {
-        color: var(--accent-yellow);
-      }
+      html[data-theme="dark"] #contact h2 { color: var(--text-dark); }
 
 
-      /* -- Skills Section -- */
-      .skills-list {
-        text-align: left;
-        font-size: 1.15rem;
-        line-height: 2;
-        list-style: none;
-        padding-left: 1.5rem;
-      }
-      .skills-list li {
-        padding-left: 0.5rem;
+      /* --- EXTREME SKILLS SECTION STYLES --- */
+      
+      /* The Card: Mesh Gradient Background */
+      .skills-card {
+        background: linear-gradient(-45deg, #ffffff, #e6f0fa, #f0f8ff);
+        border-radius: 20px;
+        padding: 3rem;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        border: 1px solid rgba(255,255,255,0.8);
+        
+        /* Animated Mesh Effect */
+        background-size: 200% 200%;
+        animation: meshFlow 10s ease infinite;
+        position: relative;
+        overflow: hidden;
       }
       
-      .skills-list li::before {
-        content: '•';
-        color: var(--dark-blue);
-        font-weight: 700;
+      html[data-theme="dark"] .skills-card {
+        background: linear-gradient(-45deg, #2d3748, #1a202c, #2c3e50);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        border: 1px solid rgba(255,255,255,0.05);
+      }
+      
+      @keyframes meshFlow {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      /* The GIF: Neon Glow Effect */
+      .skills-gif-container {
+        position: relative;
         display: inline-block;
-        width: 1.5rem;
-        margin-left: -1.5rem;
       }
-      html[data-theme="dark"] .skills-list li::before {
+      .skills-gif-container::before {
+        content: '';
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%; height: 80%;
+        background: radial-gradient(circle, rgba(21, 77, 113, 0.4) 0%, rgba(0,0,0,0) 70%);
+        border-radius: 50%;
+        animation: pulseGlow 3s infinite;
+        z-index: 0;
+      }
+      html[data-theme="dark"] .skills-gif-container::before {
+        background: radial-gradient(circle, rgba(255, 249, 175, 0.3) 0%, rgba(0,0,0,0) 70%);
+      }
+      
+      @keyframes pulseGlow {
+        0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.5; }
+        50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.8; }
+        100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.5; }
+      }
+      
+      .skills-gif {
+        position: relative;
+        z-index: 1;
+        border-radius: 20px;
+        transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      .skills-gif:hover {
+        transform: scale(1.05) rotate(2deg);
+      }
+
+      /* The Skills: Floating Chips (Not List) */
+      .skills-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center; /* Center horizontally */
+        align-content: center;   /* Center vertically if needed */
+        height: 100%;
+        padding: 1rem;
+      }
+
+      .skill-tag {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        padding: 12px 24px;
+        border-radius: 50px;
+        font-weight: 700;
+        color: var(--dark-blue);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        border: 2px solid transparent;
+        cursor: default;
+        
+        /* Initial State for Animation */
+        opacity: 0;
+        transform: translateY(30px);
+        
+        /* Hover Transitions */
+        transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+      
+      html[data-theme="dark"] .skill-tag {
+        background: rgba(45, 55, 72, 0.6);
+        color: var(--text-dark);
+        border: 1px solid rgba(255,255,255,0.1);
+      }
+
+      /* Staggered Pop-in Animation Class (Added via JS or AOS delay equivalent) */
+      .skill-tag.pop-in {
+        animation: popUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+      }
+
+      /* Delays for Staggered Effect */
+      .skill-tag:nth-child(1) { animation-delay: 0.1s; }
+      .skill-tag:nth-child(2) { animation-delay: 0.2s; }
+      .skill-tag:nth-child(3) { animation-delay: 0.3s; }
+      .skill-tag:nth-child(4) { animation-delay: 0.4s; }
+      .skill-tag:nth-child(5) { animation-delay: 0.5s; }
+      .skill-tag:nth-child(6) { animation-delay: 0.6s; }
+      .skill-tag:nth-child(7) { animation-delay: 0.7s; }
+      .skill-tag:nth-child(8) { animation-delay: 0.8s; }
+
+      @keyframes popUp {
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      /* Extreme Hover Effect */
+      .skill-tag:hover {
+        transform: translateY(-8px) scale(1.1);
+        background: var(--dark-blue);
         color: var(--accent-yellow);
+        box-shadow: 0 10px 25px rgba(21, 77, 113, 0.4);
+      }
+      html[data-theme="dark"] .skill-tag:hover {
+        background: var(--accent-yellow);
+        color: var(--dark-blue);
+        box-shadow: 0 10px 25px rgba(255, 249, 175, 0.3);
       }
 
 
-      /* -- Projects Section -- */
+      /* -- PROJECTS -- */
       .card {
         border: none;
         border-radius: 15px;
@@ -381,31 +369,14 @@
         height: 100%;
         background-color: var(--card-bg);
       }
-      html[data-theme="dark"] .card {
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      }
-      .card:hover {
-        transform: translateY(-5px);
-      }
-      .card-img-top {
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-        height: 220px;
-        object-fit: cover;
-      }
-      .card-body {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-      .card-title {
-        color: var(--dark-blue);
-      }
-      html[data-theme="dark"] .card-title {
-        color: var(--accent-yellow);
-      }
+      html[data-theme="dark"] .card { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); }
+      .card:hover { transform: translateY(-5px); }
+      .card-img-top { border-top-left-radius: 15px; border-top-right-radius: 15px; height: 220px; object-fit: cover; }
+      .card-body { display: flex; flex-direction: column; justify-content: space-between; }
+      .card-title { color: var(--dark-blue); }
+      html[data-theme="dark"] .card-title { color: var(--accent-yellow); }
 
-      /* -- Custom Button -- */
+      /* -- CUSTOM BUTTON -- */
       .btn-custom {
         background-color: var(--dark-blue);
         color: var(--accent-yellow);
@@ -426,41 +397,20 @@
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       }
 
-      /* -- Contact Section -- */
-      #contact {
-        background-color: var(--card-bg);
-      }
-      #contact h2 {
-        color: var(--dark-blue);
-        margin-bottom: 1.5rem;
-      }
+      #contact { background-color: var(--card-bg); }
+      #contact h2 { color: var(--dark-blue); margin-bottom: 1.5rem; }
 
       /* -- Footer -- */
-      footer {
-        background-color: var(--dark-blue);
-      }
-      footer a {
-        color: var(--light-blue);
-        text-decoration: none;
-      }
-      footer a:hover {
-        color: var(--accent-yellow);
-      }
+      footer { background-color: var(--dark-blue); }
+      footer a { color: var(--light-blue); text-decoration: none; }
+      footer a:hover { color: var(--accent-yellow); }
       
-      html[data-theme="dark"] footer {
-        background-color: var(--card-bg);
-      }
-      html[data-theme="dark"] footer p {
-        color: var(--text-dark);
-      }
-      html[data-theme="dark"] html[data-theme="dark"] footer a {
-        color: var(--text-dark);
-      }
-      html[data-theme="dark"] footer a:hover {
-        color: var(--accent-yellow);
-      }
+      html[data-theme="dark"] footer { background-color: var(--card-bg); }
+      html[data-theme="dark"] footer p { color: var(--text-dark); }
+      html[data-theme="dark"] html[data-theme="dark"] footer a { color: var(--text-dark); }
+      html[data-theme="dark"] footer a:hover { color: var(--accent-yellow); }
 
-      /* --- 4. Animations --- */
+      /* Animations */
       @-webkit-keyframes tracking-in-expand {
         0% { letter-spacing: -0.5em; opacity: 0; }
         40% { opacity: 0.6; }
@@ -521,37 +471,19 @@
     </nav>
 
     <section id="home" class="hero">
-      
       <ul class="circles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
       </ul>
-
       <div class="hero-content-wrapper">
         <h1 class="tracking-in-expand">
           <span style="font-family: var(--font-heading); font-weight: 700;">I am </span>
           <span style="font-family: 'Sacramento', cursive; font-weight: 400;">Mujtaba.</span>
         </h1>
         <p><span id="typed-text"></span></p>
-  
         <div class="hero-social-icons tracking-in-expand">
-          <a href="https://github.com/muhammadmujtabasajid" target="_blank" aria-label="GitHub">
-            <i class="bi bi-github"></i>
-          </a>
-          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
-            <i class="bi bi-linkedin"></i>
-          </a>
-          <a href="mailto:mujtabasajid11@gmail.com" aria-label="Email">
-            <i class="bi bi-envelope-fill"></i>
-          </a>
+          <a href="https://github.com/muhammadmujtabasajid" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="mailto:mujtabasajid11@gmail.com" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
         </div>
       </div>
     </section>
@@ -581,28 +513,35 @@
 
     <section id="skills" class="content-section">
       <div class="container">
-        <div class="card-box" data-aos="fade-up">
-          <h2 class="text-center mb-5"><b>Skills</b></h2>
-          <div
-            class="d-flex flex-column flex-md-row align-items-center justify-content-center gap-5"
-          >
-            <div class="text-center">
-              <img
-                src="https://raw.githubusercontent.com/muhammadmujtabasajid/Photos/main/gif.gif"
-                alt="My GIF"
-                class="img-fluid"
-                style="max-width: 300px; border-radius: 15px;"
-              />
+        <div class="skills-card" data-aos="fade-up">
+          <h2 class="text-center mb-5" style="color: var(--text-dark);"><b>My Tech Stack</b></h2>
+          
+          <div class="row align-items-center">
+            <div class="col-lg-5 text-center mb-4 mb-lg-0">
+              <div class="skills-gif-container">
+                <img
+                  src="https://raw.githubusercontent.com/muhammadmujtabasajid/Photos/main/gif.gif"
+                  alt="My GIF"
+                  class="img-fluid skills-gif"
+                  style="max-width: 300px;"
+                />
+              </div>
             </div>
-            <div>
-              <ul class="skills-list">
-                <li>HTML, CSS, JavaScript & Bootstrap</li>
-                <li>C++ Software Development</li>
-                <li>MERN Stack (Learning)</li>
-                <li>Problem Solving & Daily Learning</li>
-              </ul>
+            
+            <div class="col-lg-7">
+              <div class="skills-wrapper" id="skills-cloud">
+                <span class="skill-tag">HTML 5</span>
+                <span class="skill-tag">CSS 3</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Bootstrap</span>
+                <span class="skill-tag">C++ Development</span>
+                <span class="skill-tag">MERN Stack</span>
+                <span class="skill-tag">OOP Concepts</span>
+                <span class="skill-tag">Problem Solving</span>
+              </div>
             </div>
           </div>
+          
         </div>
       </div>
     </section>
@@ -611,68 +550,35 @@
       <div class="container">
         <h2 class="text-center mb-5" data-aos="fade-up"><b>My Projects</b></h2>
         <div class="row justify-content-center g-4">
-          
           <div class="col-md-6 col-lg-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="card text-center">
-              <img
-                src="https://cdn.dribbble.com/userupload/28117148/file/original-c0db2041822a946b9529b5ae1fdf08e8.gif"
-                class="card-img-top"
-                alt="Project 1"
-              />
+              <img src="https://cdn.dribbble.com/userupload/28117148/file/original-c0db2041822a946b9529b5ae1fdf08e8.gif" class="card-img-top" alt="Project 1" />
               <div class="card-body p-4">
                 <h5 class="card-title">My Portfolio</h5>
-                <p class="card-text">
-                  A personal portfolio website showcasing my skills using HTML,
-                  CSS & Bootstrap.
-                </p>
-                <a
-                  href="https://github.com/muhammadmujtabasajid/My-Portfolio-Project/tree/main"
-                  class="btn-custom mt-auto" target="_blank"
-                  >View Project</a
-                >
+                <p class="card-text">A personal portfolio website showcasing my skills using HTML, CSS & Bootstrap.</p>
+                <a href="https://github.com/muhammadmujtabasajid/My-Portfolio-Project/tree/main" class="btn-custom mt-auto" target="_blank">View Project</a>
               </div>
             </div>
           </div>
-
           <div class="col-md-6 col-lg-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
             <div class="card text-center">
-              <img
-                src="https://cdn.dribbble.com/userupload/21976650/file/original-0b3faffacfd2c7b9c5c47665ae174fab.gif"
-                class="card-img-top"
-                alt="Project 2"
-              />
+              <img src="https://cdn.dribbble.com/userupload/21976650/file/original-0b3faffacfd2c7b9c5c47665ae174fab.gif" class="card-img-top" alt="Project 2" />
               <div class="card-body p-4">
                 <h5 class="card-title">ToolShop Manager</h5>
-                <p class="card-text">
-                  A C++ console project demonstrating OOP concepts by simulating
-                  a hardware store's inventory.
-                </p>
-                <a
-                  href="https://github.com/muhammadmujtabasajid/Tool-Shop-Manager"
-                  class="btn-custom mt-auto" target="_blank"
-                  >View Project</a
-                >
+                <p class="card-text">A C++ console project demonstrating OOP concepts by simulating a hardware store's inventory.</p>
+                <a href="https://github.com/muhammadmujtabasajid/Tool-Shop-Manager" class="btn-custom mt-auto" target="_blank">View Project</a>
               </div>
             </div>
           </div>
-
           <div class="col-md-6 col-lg-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
             <div class="card text-center">
-              <img
-                src="https://cdn.dribbble.com/userupload/21820852/file/original-c9846971f56609556ce28c7e0d9aa841.gif"
-                class="card-img-top"
-                alt="Project 3"
-              />
+              <img src="https://cdn.dribbble.com/userupload/21820852/file/original-c9846971f56609556ce28c7e0d9aa841.gif" class="card-img-top" alt="Project 3" />
               <div class="card-body p-4">
                 <h5 class="card-title">Calculator</h5>
-                <p class="card-text">
-                  A basic web calculator built with HTML, CSS, and JavaScript to
-                  perform simple arithmetic operations.
-                </p>
+                <p class="card-text">A basic web calculator built with HTML, CSS, and JavaScript to perform simple arithmetic operations.</p>
                 <a href="#" class="btn-custom mt-auto">Coming Soon!</a> </div>
             </div>
           </div>
-          
         </div>
       </div>
     </section>
@@ -681,13 +587,10 @@
       <div class="container" data-aos="fade-up">
         <h2 class="mb-4">Get In Touch</h2>
         <p class="lead mb-4" style="max-width: 600px; margin: 0 auto;">
-          I'm always open to new opportunities and collaborations. Feel free to
-          reach out!
+          I'm always open to new opportunities and collaborations. Feel free to reach out!
         </p>
-        <a href="mailto:mujtabasajid11@gmail.com" class="btn-custom btn-lg"
-          >Contact Me</a
-        >
-        </div>
+        <a href="mailto:mujtabasajid11@gmail.com" class="btn-custom btn-lg">Contact Me</a>
+      </div>
     </section>
 
     <footer class="text-light py-4">
@@ -708,7 +611,6 @@
     
     <script>
       (function() {
-        // --- Theme Toggle ---
         const themeToggle = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
         const docHtml = document.documentElement;
@@ -745,50 +647,41 @@
     <script>
       (function() {
         const typedTextSpan = document.getElementById('typed-text');
-        
         if (typedTextSpan) {
-          const textArray = [
-            "Learning Web Development", 
-            "Learning Software Engineering",
-            "love to grind on what seems difficult", 
-          
-            "a Plant Enthusiast 🌱"
-          ];
+          const textArray = ["Learning Web Development", "Learning Software Engineering", "love to grind on what seems difficult", "a Plant Enthusiast 🌱"];
           const typingDelay = 100;
           const erasingDelay = 50;
-          const newTextDelay = 2200; // Delay before starting to erase
+          const newTextDelay = 2200;
           let textArrayIndex = 0;
           let charIndex = 0;
 
           function type() {
-            typedTextSpan.classList.add('typing'); // Pause cursor blink
+            typedTextSpan.classList.add('typing');
             if (charIndex < textArray[textArrayIndex].length) {
               typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
               charIndex++;
               setTimeout(type, typingDelay);
             } else {
-              typedTextSpan.classList.remove('typing'); // Resume blink
+              typedTextSpan.classList.remove('typing');
               setTimeout(erase, newTextDelay);
             }
           }
 
           function erase() {
-            typedTextSpan.classList.add('typing'); // Pause cursor blink
+            typedTextSpan.classList.add('typing');
             if (charIndex > 0) {
               typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
               charIndex--;
               setTimeout(erase, erasingDelay);
             } else {
-              typedTextSpan.classList.remove('typing'); // Resume blink
+              typedTextSpan.classList.remove('typing');
               textArrayIndex++;
               if (textArrayIndex >= textArray.length) textArrayIndex = 0;
-              setTimeout(type, typingDelay + 1100); // Wait before typing new string
+              setTimeout(type, typingDelay + 1100);
             }
           }
-
-          // Start the effect on load
           document.addEventListener("DOMContentLoaded", function() { 
-            if(textArray.length) setTimeout(type, newTextDelay - 1000); // Initial delay
+            if(textArray.length) setTimeout(type, newTextDelay - 1000); 
           });
         }
       })();
@@ -799,6 +692,24 @@
       AOS.init({
         duration: 800, 
         once: true, 
+      });
+
+      // --- CUSTOM SCRIPT TO TRIGGER SKILL POP-IN ---
+      // This ensures the pop-up animation happens only when scrolled into view
+      document.addEventListener('aos:in:skills', ({ detail }) => {
+        const skills = document.querySelectorAll('.skill-tag');
+        skills.forEach(skill => {
+          skill.classList.add('pop-in');
+        });
+      });
+      // Fallback for simple scroll if AOS custom event is tricky
+      window.addEventListener('scroll', function() {
+        const skillSection = document.getElementById('skills');
+        const rect = skillSection.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 100) {
+           const skills = document.querySelectorAll('.skill-tag');
+           skills.forEach(skill => skill.classList.add('pop-in'));
+        }
       });
     </script>
   
