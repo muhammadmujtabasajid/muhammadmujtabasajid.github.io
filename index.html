@@ -184,10 +184,33 @@
       #typed-text.typing::after { animation: none; }
       @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
       
-      @media (max-width: 480px) {
-        .hero h1 { font-size: 50px; }
+      /* --- MOBILE RESPONSIVENESS FIXES --- */
+      @media (max-width: 768px) {
+        /* Reduce hero text sizes */
+        .hero h1 { font-size: 45px; }
         .hero p { font-size: 18px; min-height: 2rem; } 
-        .about-img { max-width: 250px; }
+        .about-img { max-width: 220px; }
+        
+        /* Reduce massive section padding so content fits on screen */
+        .content-section { padding: 3rem 0; }
+        
+        /* Reduce skills card padding to give tags room to breathe */
+        .skills-card { padding: 1.5rem; }
+        
+        /* Make the skills GIF smaller on mobile */
+        .skills-gif { max-width: 200px !important; }
+        
+        /* Allow tags to wrap on tiny screens if absolutely necessary, 
+           and reduce their padding/font-size slightly */
+        .skill-tag { 
+          padding: 8px 16px; 
+          font-size: 0.9rem;
+          white-space: normal; /* Let long text wrap if it has to */
+          text-align: center;
+        }
+        
+        /* Fix Project Card image heights so they don't look stretched */
+        .card-img-top { height: 180px; }
       }
 
       /* --- ABOUT IMAGE: SUBTLE FLUID (Not too blobby) --- */
